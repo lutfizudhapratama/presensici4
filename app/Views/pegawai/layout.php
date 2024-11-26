@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +8,20 @@
     <title><?= $title ?></title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?> " />
     <link rel="stylesheet" href="<?= base_url('assets/css/lineicons.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/materialdesignicons.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/fullcalendar.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/main.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
-    <!-- Tabler ICON -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons.min.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
   </head>
   <body>
     <!-- ======== Preloader =========== -->
@@ -26,49 +32,47 @@
 
     <!-- ======== sidebar-nav start =========== -->
     <aside class="sidebar-nav-wrapper">
-      <div class="navbar-logo">
+    <div class="navbar-logo">
         <a href="index.html">
-          <img style="width: 80%;" src="<?= base_url('assets/images/logo/logo-presensi.png')?>" alt="logo" />
+        <img style="width: 90%;" src="<?= base_url('assets/images/logo/logo-presensi.png') ?> " alt="logo" />
         </a>
-      </div>
-      <nav class="sidebar-nav">
+    </div>
+    <nav class="sidebar-nav">
         <ul>
-             
-        <li class="nav-item mb-2">
-            <a href="invoice.html">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-              </span>
-              <span class="text">Dashbord</span>
+        <li class="nav-item">
+            <a href="<?= base_url('pegawai/home')?>" class="d-flex align-items-center">
+            <i class="fas fa-tachometer-alt"></i> <!-- Ikon Dashboard -->
+            <span class="text ms-2">Dashboard</span>
             </a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-4" /><path d="M12 17v-1" /><path d="M15 17v-2" /><path d="M12 17v-1" /></svg>
-              <span class="text">Rekap Presensi</span>
-            </a>
-          </li>
-         
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M22 22l-5 -5" /><path d="M17 22l5 -5" /></svg>
-              <span class="text">Ketidakhadiran</span>
-            </a>
-          </li>
+        </li>
 
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
-              <span class="text">Logout</span>
+        <li class="nav-item">
+            <a href="<?= base_url('pegawai/rekap_presensi')?>" class="d-flex align-items-center">
+            <i class="fas fa-file-alt"></i> <!-- Ikon Data Pegawai -->
+            <span class="text ms-2">Rekap Presensi</span>
             </a>
-          </li>
+        </li>
 
+        <li class="nav-item">
+            <a href="<?= base_url('pegawai/ketidakhadiran')?>" class="d-flex align-items-center">
+            <i class="fas fa-user-times"></i> <!-- Ikon Ketidakhadiran -->
+            <span class="text ms-2">Ketidakhadiran</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?= base_url('logout')?>" class="d-flex align-items-center">
+            <i class="fas fa-sign-out-alt"></i> <!-- Ikon Logout -->
+            <span class="text ms-2">Logout</span>
+            </a>
+        </li>
         </ul>
-      </nav>
-      
+    </nav>
     </aside>
     <div class="overlay"></div>
     <!-- ======== sidebar-nav end =========== -->
+
+
 
     <!-- ======== main-wrapper start =========== -->
     <main class="main-wrapper">
@@ -87,8 +91,6 @@
             </div>
             <div class="col-lg-7 col-md-7 col-6">
               <div class="header-right">
-                
-                
                 <!-- profile start -->
                 <div class="profile-box ml-15">
                   <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
@@ -96,11 +98,11 @@
                     <div class="profile-info">
                       <div class="info">
                         <div class="image">
-                          <img src="<?= base_url('assets/images/profile/profile-image.png')?>" alt="" />
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="" />
                         </div>
                         <div>
                           <h6 class="fw-500 text-uppercase"><?= session()->get('username') ?></h6>
-                          <p><?= session()->get('role_id')?></p>
+                          <p><?= session()->get('role') ?></p>
                         </div>
                       </div>
                     </div>
@@ -109,12 +111,12 @@
                     <li>
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="image">
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="image">
                         </div>
                         <div class="content">
-                          <h4 class="text-sm">Adam Joe</h4>
+                          <h4 class="text-sm">Budi</h4>
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#">Email@gmail.com</a>
+                            href="#">Budi@gmail.com</a>
                         </div>
                       </div>
                     </li>
@@ -160,47 +162,39 @@
                   <h2><?= $title ?></h2>
                 </div>
               </div>
-              <!-- end col -->
-              
             </div>
             <!-- end row -->
           </div>
-
           <!-- ========== title-wrapper end ========== -->
-
           <?= $this->renderSection('content') ?>
         </div>
         <!-- end container -->
       </section>
       <!-- ========== section end ========== -->
 
-      <!-- ========== footer start =========== -->
-      <footer class="footer">
+        <!-- ========== footer start =========== -->
+        <footer class="footer">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6 order-last order-md-first">
-              <div class="copyright text-center text-md-start">
+            <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="copyright text-center">
                 <p class="text-sm">
-                  Designed and Developed by
-                  <a href="https://plainadmin.com" rel="nofollow" target="_blank">
-                    PlainAdmin
-                  </a>
+                    Made In Heaven by
+                    <a href="https://www.instagram.com/luqmann.11/" rel="nofollow" target="_blank">
+                    Me
+                    </a>
                 </p>
-              </div>
+                </div>
             </div>
             <!-- end col-->
-            <div class="col-md-6">
-              <div class="terms d-flex justify-content-center justify-content-md-end">
-                <a href="#0" class="text-sm">Term & Conditions</a>
-                <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
-              </div>
             </div>
-          </div>
-          <!-- end row -->
+            <!-- end row -->
         </div>
         <!-- end container -->
-      </footer>
-      <!-- ========== footer end =========== -->
+        </footer>
+        <!-- ========== footer end =========== -->
+
+
     </main>
     <!-- ======== main-wrapper end =========== -->
 
@@ -209,5 +203,85 @@
     <script src="<?= base_url('assets/js/jvectormap.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/polyfill.js') ?>"></script>
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
+    <script>
+      $(document).ready( function () {
+          $('#datatables').DataTable({
+              responsive: true,
+              pageLength: 10,
+              language: {
+                  search: "Cari:",
+                  lengthMenu: "Tampilkan _MENU_ baris",
+                  info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
+                  paginate: {
+                      first: "Awal",
+                      last: "Akhir",
+                      next: "Selanjutnya",
+                      previous: "Sebelumnya"
+                  }
+              }
+          });
+      });
+      
+      $(function(){
+        <?php if (session()->has('gagal')) { ?>
+          Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "<?= session()->get('gagal') ?>",
+        });
+          <?php } ?>
+      });
+
+      $(function(){
+        <?php if (session()->has('berhasil')) { ?>
+            const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "<?= $_SESSION ['berhasil'] ?>"
+          });
+          <?php } ?>
+      });
+
+      $('.tombol-hapus').on('click', function(e){
+          e.preventDefault(); // Mencegah link dieksekusi langsung
+          var getLink = $(this).attr('href');
+
+          Swal.fire({
+              title: "Anda yakin ingin menghapus?",
+              text: "Data yang anda hapus tidak akan bisa dikembalikan!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.href = getLink; // Redirect ke link setelah konfirmasi
+                  Swal.fire({
+                      title: "Deleted!",
+                      text: "Your file has been deleted.",
+                      icon: "success"
+                  });
+              }
+          });
+      });
+    </script>
+
   </body>
 </html>

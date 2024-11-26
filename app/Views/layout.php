@@ -8,14 +8,13 @@
     <title>Blank Page | PlainAdmin Demo</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?> " />
     <link rel="stylesheet" href="<?= base_url('assets/css/lineicons.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/materialdesignicons.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/fullcalendar.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/main.css')?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Tabler ICON -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons.min.css" />
   </head>
   <body>
     <!-- ======== Preloader =========== -->
@@ -26,72 +25,76 @@
 
     <!-- ======== sidebar-nav start =========== -->
     <aside class="sidebar-nav-wrapper">
-      <div class="navbar-logo">
+    <div class="navbar-logo">
         <a href="index.html">
-          <img style="width: 80%;" src="assets/images/logo/logo-presensi.png" alt="logo" />
+        <img style="width: 90%;" src="assets/images/logo/logo-presensi.png" alt="logo" />
         </a>
-      </div>
-      <nav class="sidebar-nav">
+    </div>
+    <nav class="sidebar-nav">
         <ul>
-             
-        <li class="nav-item mb-2">
-            <a href="invoice.html">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-              </span>
-              <span class="text">Dashbord</span>
+        <li class="nav-item">
+            <a href="dashboard.html" class="d-flex align-items-center">
+            <i class="fas fa-tachometer-alt"></i> <!-- Ikon Dashboard -->
+            <span class="text ms-2">Dashboard</span>
             </a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
-              <span class="text">Data Pegawai</span>
-            </a>
-          </li>
+        </li>
 
-          <li class="nav-item nav-item-has-children mb-2">
+        <li class="nav-item">
+            <a href="data-pegawai.html" class="d-flex align-items-center">
+            <i class="fas fa-users"></i> <!-- Ikon Data Pegawai -->
+            <span class="text ms-2">Data Pegawai</span>
+            </a>
+        </li>
+
+        <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
-              class="collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#ddmenu_1"
-              aria-controls="ddmenu_1"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+            href="#0"
+            class="d-flex align-items-center collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#ddmenu_1"
+            aria-controls="ddmenu_1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
             >
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-4" /><path d="M12 17v-1" /><path d="M15 17v-2" /><path d="M12 17v-1" /></svg>
-              <span class="text">Rekap Presensi</span>
+            <i class="fas fa-file-alt"></i> <!-- Ikon Rekap Presensi -->
+            <span class="text ms-2">Rekap Presensi</span>
             </a>
             <ul id="ddmenu_1" class="collapse dropdown-nav">
-              <li>
-                <a href="index.html"> Rekap Harian </a>
-              </li>
-              <li>
-                <a href="index.html"> Rekap Bulanan </a>
-              </li>
+            <li>
+                <a href="rekap-harian.html" class="d-flex align-items-center">
+                <i class="fas fa-calendar-day"></i> <!-- Ikon Rekap Harian -->
+                <span class="ms-2">Rekap Harian</span>
+                </a>
+            </li>
+            <li>
+                <a href="rekap-bulanan.html" class="d-flex align-items-center">
+                <i class="fas fa-calendar-alt"></i> <!-- Ikon Rekap Bulanan -->
+                <span class="ms-2">Rekap Bulanan</span>
+                </a>
+            </li>
             </ul>
-          </li>
-         
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M22 22l-5 -5" /><path d="M17 22l5 -5" /></svg>
-              <span class="text">Ketidakhadiran</span>
-            </a>
-          </li>
+        </li>
 
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
-              <span class="text">Logout</span>
+        <li class="nav-item">
+            <a href="ketidakhadiran.html" class="d-flex align-items-center">
+            <i class="fas fa-user-times"></i> <!-- Ikon Ketidakhadiran -->
+            <span class="text ms-2">Ketidakhadiran</span>
             </a>
-          </li>
+        </li>
 
+        <li class="nav-item">
+            <a href="logout.html" class="d-flex align-items-center">
+            <i class="fas fa-sign-out-alt"></i> <!-- Ikon Logout -->
+            <span class="text ms-2">Logout</span>
+            </a>
+        </li>
         </ul>
-      </nav>
-      
+    </nav>
     </aside>
     <div class="overlay"></div>
     <!-- ======== sidebar-nav end =========== -->
+
+
 
     <!-- ======== main-wrapper start =========== -->
     <main class="main-wrapper">
@@ -110,8 +113,6 @@
             </div>
             <div class="col-lg-7 col-md-7 col-6">
               <div class="header-right">
-                
-                
                 <!-- profile start -->
                 <div class="profile-box ml-15">
                   <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
@@ -119,7 +120,7 @@
                     <div class="profile-info">
                       <div class="info">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="" />
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="" />
                         </div>
                         <div>
                           <h6 class="fw-500">Adam Joe</h6>
@@ -132,7 +133,7 @@
                     <li>
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="image">
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="image">
                         </div>
                         <div class="content">
                           <h4 class="text-sm">Adam Joe</h4>
@@ -183,14 +184,10 @@
                   <h2>Title</h2>
                 </div>
               </div>
-              <!-- end col -->
-              
             </div>
             <!-- end row -->
           </div>
-
           <!-- ========== title-wrapper end ========== -->
-
           <?= $this->renderSection('content') ?>
         </div>
         <!-- end container -->

@@ -8,17 +8,26 @@
     <title><?= $title ?></title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?> " />
     <link rel="stylesheet" href="<?= base_url('assets/css/lineicons.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/materialdesignicons.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/fullcalendar.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('assets/css/main.css')?>" />
-
-    <!-- Tabler ICON -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons.min.css" />
-
-    <!-- Sweetalert -->
+    <link rel="stylesheet" href="<?= base_url('assets/css/main.css') ?>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+  
+    <!--Datatables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+    <!--Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+    <!--Leaflet Js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 
   </head>
   <body>
@@ -30,96 +39,105 @@
 
     <!-- ======== sidebar-nav start =========== -->
     <aside class="sidebar-nav-wrapper">
-      <div class="navbar-logo">
+    <div class="navbar-logo">
         <a href="index.html">
-          <img style="width: 80%;" src="<?= base_url('assets/images/logo/logo-presensi.png')?>" alt="logo" />
+        <img style="width: 90%;" src="<?= base_url('assets/images/logo/logo-presensi.png') ?>" alt="logo" />
         </a>
-      </div>
-      <nav class="sidebar-nav">
+    </div>
+    <nav class="sidebar-nav">
         <ul>
-             
-        <li class="nav-item mb-2">
-            <a href="invoice.html">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
-              </span>
-              <span class="text">Dashbord</span>
+        <li class="nav-item">
+            <a href="<?= base_url('admin/home') ?>" class="d-flex align-items-center">
+            <i class="fas fa-tachometer-alt"></i> <!-- Ikon Dashboard -->
+            <span class="text ms-2">Dashboard</span>
             </a>
-          </li>
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-users"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
-              <span class="text">Data Pegawai</span>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?= base_url('admin/data_pegawai') ?>" class="d-flex align-items-center">
+            <i class="fas fa-users"></i> <!-- Ikon Data Pegawai -->
+            <span class="text ms-2">Data Pegawai</span>
             </a>
-          </li>
+        </li>
 
-
-          <li class="nav-item nav-item-has-children mb-2">
+        <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
-              class="collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#master-data"
-              aria-controls="ddmenu_1"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+            href="#0"
+            class="d-flex align-items-center collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#master-data"
+            aria-controls="master-data"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
             >
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-database"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6m-8 0a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /><path d="M4 6v6a8 3 0 0 0 16 0v-6" /><path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg>
-              <span class="text">Master Data</span>
+            <i class="fas fa-database"></i> <!-- Ikon Rekap Presensi -->
+            <span class="text ms-2">Master Data</span>
             </a>
             <ul id="master-data" class="collapse dropdown-nav">
-              <li>
-                <a href="<?= base_url('admin/jabatan') ?>"> Data Jabatan </a>
-              </li>
-              <li>
-                <a href="index.html"> Lokasi Presensi </a>
-              </li>
+            <li>
+                <a href="<?= base_url('admin/jabatan') ?>" class="d-flex align-items-center">
+                <i class="fas fa-calendar-day"></i> <!-- Ikon Rekap Harian -->
+                <span class="ms-2">Data Jabatan</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/lokasi_presensi') ?>" class="d-flex align-items-center">
+                <i class="fas fa-calendar-alt"></i> <!-- Ikon Rekap Bulanan -->
+                <span class="ms-2">Lokasi Presensi</span>
+                </a>
+            </li>
             </ul>
-          </li>
+        </li>
 
-          <li class="nav-item nav-item-has-children mb-2">
+        <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
-              class="collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#ddmenu_1"
-              aria-controls="ddmenu_1"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+            href="#0"
+            class="d-flex align-items-center collapsed"
+            data-bs-toggle="collapse"
+            data-bs-target="#ddmenu_1"
+            aria-controls="ddmenu_1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
             >
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-clipboard-data"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-4" /><path d="M12 17v-1" /><path d="M15 17v-2" /><path d="M12 17v-1" /></svg>
-              <span class="text">Rekap Presensi</span>
+            <i class="fas fa-file-alt"></i> <!-- Ikon Rekap Presensi -->
+            <span class="text ms-2">Rekap Presensi</span>
             </a>
             <ul id="ddmenu_1" class="collapse dropdown-nav">
-              <li>
-                <a href="index.html"> Rekap Harian </a>
-              </li>
-              <li>
-                <a href="index.html"> Rekap Bulanan </a>
-              </li>
+            <li>
+                <a href="<?= base_url('admin/rekap_harian') ?>" class="d-flex align-items-center">
+                <i class="fas fa-calendar-day"></i> <!-- Ikon Rekap Harian -->
+                <span class="ms-2">Rekap Harian</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('admin/rekap_bulanan') ?>" class="d-flex align-items-center">
+                <i class="fas fa-calendar-alt"></i> <!-- Ikon Rekap Bulanan -->
+                <span class="ms-2">Rekap Bulanan</span>
+                </a>
+            </li>
             </ul>
-          </li>
-         
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-user-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /><path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" /><path d="M22 22l-5 -5" /><path d="M17 22l5 -5" /></svg>
-              <span class="text">Ketidakhadiran</span>
-            </a>
-          </li>
+        </li>
 
-          <li class="nav-item mb-2">
-            <a href="invoice.html">
-              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
-              <span class="text">Logout</span>
+        <li class="nav-item">
+            <a href="<?= base_url('admin/ketidakhadiran') ?>" class="d-flex align-items-center">
+            <i class="fas fa-user-times"></i> <!-- Ikon Ketidakhadiran -->
+            <span class="text ms-2">Ketidakhadiran</span>
             </a>
-          </li>
+        </li>
 
+        <li class="nav-item">
+            <a href="<?= base_url('logout') ?>" class="d-flex align-items-center">
+            <i class="fas fa-sign-out-alt"></i> <!-- Ikon Logout -->
+            <span class="text ms-2">Logout</span>
+            </a>
+        </li>
         </ul>
-      </nav>
-      
+    </nav>
     </aside>
     <div class="overlay"></div>
     <!-- ======== sidebar-nav end =========== -->
+
+
 
     <!-- ======== main-wrapper start =========== -->
     <main class="main-wrapper">
@@ -138,8 +156,6 @@
             </div>
             <div class="col-lg-7 col-md-7 col-6">
               <div class="header-right">
-                
-                
                 <!-- profile start -->
                 <div class="profile-box ml-15">
                   <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
@@ -147,11 +163,11 @@
                     <div class="profile-info">
                       <div class="info">
                         <div class="image">
-                          <img src="<?= base_url('assets/images/profile/profile-image.png')?>" alt="" />
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="" />
                         </div>
                         <div>
                           <h6 class="fw-500 text-uppercase"><?= session()->get('username') ?></h6>
-                          <p><?= session()->get('role_id')?></p>
+                          <p><?= session()->get('role_id') ?></p>
                         </div>
                       </div>
                     </div>
@@ -160,7 +176,7 @@
                     <li>
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img src="assets/images/profile/profile-image.png" alt="image">
+                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="image">
                         </div>
                         <div class="content">
                           <h4 class="text-sm">Adam Joe</h4>
@@ -211,14 +227,10 @@
                   <h2><?= $title ?></h2>
                 </div>
               </div>
-              <!-- end col -->
-              
             </div>
             <!-- end row -->
           </div>
-
           <!-- ========== title-wrapper end ========== -->
-
           <?= $this->renderSection('content') ?>
         </div>
         <!-- end container -->
@@ -261,62 +273,73 @@
     <script src="<?= base_url('assets/js/polyfill.js') ?>"></script>
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
 
-<!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-   <!-- datatables -->
+
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- datatables -->
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 
-      <!-- sweetalert -->
+    <!-- sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
- <script>
-  // datatables
-$(document).ready( function () {
-    $('#datatables').DataTable();
-});
 
-//sweetalert berhasil
-$(function() {
-  <?php if(session()->has('berhasil')) { ?>
-    const Toast = Swal.mixin({
-  toast: true,
-  position: "top-end",
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  didOpen: (toast) => {
-    toast.onmouseenter = Swal.stopTimer;
-    toast.onmouseleave = Swal.resumeTimer;
-  }
-});
-Toast.fire({
-  icon: "success",
-  title: "<?= $_SESSION['berhasil'] ?>"
-});
+<script>
+    // Initialize DataTable
+    $(document).ready(function () {
+        $('#datatables').DataTable();
+    });
+
+   // SweetAlert for success message
+$(function () {
+    <?php if (session()->has('berhasil')) { ?>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top", // Set position to 'top'
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            },
+            didClose: () => {
+                // Custom CSS to center the toast horizontally
+                $(".swal2-popup").css({
+                    left: "50%",
+                    transform: "translateX(-50%)"
+                });
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "<?= $_SESSION['berhasil'] ?>"
+        });
     <?php } ?>
 });
 
-// sweetalert konfirmasi hapus
-$('.tombol-hapus').on('click', function(){
-var getLink = $(this).attr('href');
 
-Swal.fire({
-  title: "Yakin hapus?",
-  text: "Data yang sudah dihapus tidak bisa dikembalikan!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-   window.location.href = getLink
-  }
-});
-return false;
-});
- </script>
-
-</body>
+    // SweetAlert for delete confirmation
+    $(document).on('click', '.tombol-hapus', function (e) {
+        e.preventDefault();
+        var getLink = $(this).attr('href');
+        Swal.fire({
+            title: "Apakah Anda yakin?",
+            text: "Data yang sudah dihapus tidak bisa dikembalikan!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = getLink;
+            }
+        });
+    });
+</script>
+  </body>
 </html>
